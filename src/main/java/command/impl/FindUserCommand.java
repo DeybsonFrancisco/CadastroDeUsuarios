@@ -38,7 +38,7 @@ public class FindUserCommand implements Command {
 			}else {
 				res.setContentType("application/json");
 				res.setCharacterEncoding("UTF-8");
-				res.getWriter().print(json.toJson("{'msg': 'não existe usuario com este id'}"));
+				res.getWriter().print(json.toJson("não existe usuario com este id"));
 			}
 
 		}catch(Exception ex){

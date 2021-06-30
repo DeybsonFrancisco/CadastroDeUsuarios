@@ -26,7 +26,7 @@ public class RemoveUserPhoneCommand  implements Command {
 			dao.removeUserPhone(id);
 			res.setContentType("application/json");
 			res.setCharacterEncoding("UTF-8");
-			res.getWriter().print(json.toJson("msg: telefone do usuário excluido!"));
+			res.getWriter().print(json.toJson("telefone do usuário excluido!"));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
