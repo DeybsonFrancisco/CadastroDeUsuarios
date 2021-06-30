@@ -3,8 +3,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-			<span class="navbar-brand mb-0 text-danger h1">Java com jsp e
-				ajax</span>
+			<span class="navbar-brand mb-0 text-danger h1">Sistema para cadastro de usuários</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNav" aria-controls="navbarNav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -96,12 +95,12 @@
 							 	<input type="number" class="form-control" id="numeroCadastro" name="numero" disabled required/>
 							<label for="tipo">Tipo</label>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="fixo" value="Fixo" >
-								<label class="form-check-label" for="fixo"> Fixo </label>
+								<input class="form-check-input" type="radio" name="tipo" id="tipoFixo" value="Fixo" >
+								<label class="form-check-label" for="tipoFixo"> Fixo </label>
 							</div>
-							<div>
-								<input class="form-check-input" type="radio" name="celular elular"value="Celular"checked>
-								<label class="form-check-label" for="celular"> Celular </label>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="tipo" id="tipoCelular" value="Celular"checked>
+								<label class="form-check-label" for="tipoCelular"> Celular </label>
 							</div>
 						</div>
 						<button id="buttonAddTelefone" type="submit"

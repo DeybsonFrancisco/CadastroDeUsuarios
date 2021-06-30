@@ -63,7 +63,6 @@ String name = user.getName();
 				</tr>
 			</thead>
 			<tbody id="tabelaUsuarios">
-
 			</tbody>
 		</table>
 
@@ -128,7 +127,6 @@ String name = user.getName();
 							</tr>
 						</thead>
 						<tbody id="tabelaTelefones">
-
 						</tbody>
 					</table>
 				</div>
@@ -199,27 +197,40 @@ String name = user.getName();
 					<hr />
 
 					<h6 class="modal-title" id="exampleModalLabel">Telefones</h6>
+					
+					<table class="table table-dark table-striped col-12">
+						<thead class="thead">
+							<tr>
+								<th scope="col">DDD</th>
+								<th scope="col">Número</th>
+								<th scope="col">Tipo</th>
+								<th scope="col">Ações</th>
+							</tr>
+						</thead>
+						<tbody id="tabelaTelefonesModalFind">
+						</tbody>
+					</table>
+					
+					
 					<div class="scrollspy-example">
-						<form id="list-item-1" class="align-items-end">
+						<form id="formAddTelefone" class="align-items-end">
 							<div class="form-group">
 								<label for="ddd">DDD</label> <input type="number"
-									class="form-control" id="dddConsulta" name="ddd"> <label
+									class="form-control" id="dddConsulta" name="ddd"  required> <label
 									for="numero">Número</label> <input type="number"
-									class="form-control" id="numeroConsulta" name="nÃºmero">
+									class="form-control" id="numeroConsulta" name="número"  required>
 								<label for="tipo">Tipo</label>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="Fixo"
-										id="RFixoCadastro" value="Fixo"> <label
-										class="form-check-label" for="fixo"> Fixo </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="Celular"
-										id="RCelularCadastro" value="Celular"> <label
-										class="form-check-label" for="celular"> Celular </label>
-								</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="tipo" id="tipoFixo" value="Fixo" >
+								<label class="form-check-label" for="tipoFixo"> Fixo </label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="tipo" id="tipoCelular" value="Celular"checked>
+								<label class="form-check-label" for="tipoCelular"> Celular </label>
+							</div>
 							</div>
 							<button id="btnSalvarTelefoneFormConsulta" type="submit"
-								class="btn btn-primary">salvar atualização</button>
+								class="btn btn-primary">Add nove telefone</button>
 						</form>
 					</div>
 

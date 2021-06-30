@@ -22,8 +22,11 @@ $('#formAdd').submit(function(e) {
 	const result = ajax.create({name, email, password})
 	if(result){
 		$('#addModal').modal('hide');
-		view.renderNewUserInTable(result, 'removeFunction', 'view')
+		view.renderNewUserInTable(result, 'removeFunction', 'removePhoneUserFunction', 'view')
 		alert("Adicionado!!")
+		$('#nomeAdd').val(''),
+		$('#emailAdd').val('');
+		$('#senhaAdd').val('');
 	}else{
 		alert('Ocorreu um erro na solicitação')
 	}
@@ -38,7 +41,7 @@ $("#btnBusca").click(function() {
 	let id = $("#idBusca").val();
 	const result = ajax.find(id);
 	if(result.id){
-		view.openModalFind(result, removeFunction)
+		view.openModalFind(result, removeFunction, 'removePhoneUserFunction')
 	}else{
 		alert(result)	
 	}	
@@ -59,7 +62,7 @@ $("#formAlterarLista").submit(function(e) {
 	const result = ajax.update({name, email, password}, id)
 	if(result){
 		$('#alterarModal').modal('hide');
-		view.updateTableUser(result, 'removeFunction','view')
+		view.updateTableUser(result, 'removeFunction', 'removePhoneUserFunction', 'view')
 		console.log(result)
 		alert("Alterado!!")
 	}else{
@@ -76,7 +79,7 @@ $("#formAlterarConsulta").submit(function(e) {
 		password = $('#senhaConsulta').val();
 	const result = ajax.update({name, email, password}, id)
 	if(result){
-		view.updateTableUser(result, 'removeFunction','view')
+		view.updateTableUser(result, 'removeFunction', 'removePhoneUserFunction', 'view')
 		alert("Alterado!!");
 	}else{
 		alert('Ocorreu um erro na solicitação')
@@ -95,10 +98,12 @@ function removeFunction(id) {
 
 function removePhoneUserFunction(id) {
 	const result = ajax.removePhone(id)
-	if(result !== null)
+	if(result !== null){
 		$(`#phone${id}`).remove()
-		alert("Excluido")
-		
+  		const result =  ajax.list();
+  		if(result !== null)
+ 		view.renderAllUserInTable(result, 'removeFunction', 'view', 'removePhoneUserFunction')
+	}		
 }
 
 $("#buttonSair").click(function(){		

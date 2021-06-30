@@ -108,5 +108,23 @@ remove(id){
 			return result;
 	}
 	
-	
+	addPhone(phone){
+		let result;
+		$.ajax({
+			url : "UserController",
+			type : 'POST',
+			data : {
+				id: phone.id,
+				ddd: phone.ddd,
+				num: phone.num,
+				type: phone.type,
+				command : "addPhone"
+			},
+			async: false,
+			success : function(data) {
+				result = data;
+			}
+		})
+		return result
+	}
 }
