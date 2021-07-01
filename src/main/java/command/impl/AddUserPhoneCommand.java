@@ -10,8 +10,8 @@ import command.Command;
 import command.bind.PhoneBind;
 import dao.UserDAO;
 import model.Phone;
-import model.User;
-import model.dto.UserDto;
+import model.dto.PhoneDto;
+
 
 public class AddUserPhoneCommand implements Command {
 
@@ -30,11 +30,11 @@ public class AddUserPhoneCommand implements Command {
 		
 		Gson json = new GsonBuilder().create();
 		try {
-			User userSave = dao.addUserPhone(phone, userId);
-			UserDto userDto = UserDto.toModel(userSave);
+			Phone phoneSave = dao.addUserPhone(phone, userId);
+			PhoneDto dto = PhoneDto.toModel(phoneSave);
 			res.setContentType("application/json");
 			res.setCharacterEncoding("UTF-8");
-			res.getWriter().print(json.toJson(userDto));
+			res.getWriter().print(json.toJson(dto));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

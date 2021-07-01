@@ -218,7 +218,7 @@ String name = user.getName();
 								<label for="ddd">DDD</label> <input type="number"
 									class="form-control" id="dddConsulta" name="ddd"  required> <label
 									for="numero">Número</label> <input type="number"
-									class="form-control" id="numeroConsulta" name="número"  required>
+									class="form-control" id="numeroConsulta" name="numero" required>
 								<label for="tipo">Tipo</label>
 							<div class="form-check">
 								<input class="form-check-input" type="radio" name="tipo" id="tipoFixo" value="Fixo" >
@@ -230,7 +230,7 @@ String name = user.getName();
 							</div>
 							</div>
 							<button id="btnSalvarTelefoneFormConsulta" type="submit"
-								class="btn btn-primary">Add nove telefone</button>
+								class="btn btn-primary" type="submit">Add nove telefone</button>
 						</form>
 					</div>
 

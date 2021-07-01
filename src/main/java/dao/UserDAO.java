@@ -99,7 +99,7 @@ public class UserDAO {
 		}
 	}
 
-	public User addUserPhone(Phone phone, Long userId) throws UserException {
+	public Phone addUserPhone(Phone phone, Long userId) throws UserException {
 		em = emf.createEntityManager();
 		try {
 			User user = em.find(User.class, userId);
@@ -108,11 +108,8 @@ public class UserDAO {
 			em.persist(phone);
 			em.getTransaction().commit();
 			em.close();
-			
-			List<Phone> phones = user.getPhones();
-			phones.add(phone);
-			user.setPhones(phones);
-			return user;
+	
+			return phone;
 			
 		}catch(Exception e) {
 			e.printStackTrace();

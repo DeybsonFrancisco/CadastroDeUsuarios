@@ -1,5 +1,8 @@
 package model.dto;
 
+import org.modelmapper.ModelMapper;
+
+import model.Phone;
 
 public class PhoneDto {
 
@@ -21,6 +24,13 @@ public class PhoneDto {
 		this.ddd = ddd;
 		this.number = number;
 		this.type = type;
+	}
+	
+	public static PhoneDto toModel(Phone phone){
+		ModelMapper modelMapper = new ModelMapper();
+		PhoneDto dto = modelMapper.map(phone, PhoneDto.class);
+		return dto;
+		
 	}
 	
 

@@ -33,6 +33,33 @@ $('#formAdd').submit(function(e) {
 })
 
 
+$('#formAddTelefone').submit(function(e){
+	e.preventDefault()
+	let ddd = $("#dddConsulta").val()
+	let num = $("#numeroConsulta").val()
+	let type = $("input[name ='tipo']:checked").val()
+	let id = $('#idConsulta').val()
+	
+	console.log(ddd, num, type, id)
+	const result = ajax.addPhone({id, ddd, num, type})
+	if(result !== null){
+		$('#buttonAddTelefone').html( 'Adicionado')
+		$('#buttonAddTelefone').addClass('btn-success')
+		$("#dddCosulta").val('')
+		$("#numeroConsulta").val('')
+		setTimeout(() =>{
+		$('#buttonAddTelefone').removeClass('btn-success').addClass('btn-primary')
+			$('#buttonAddTelefone').html( 'Adicionar')
+			}, 1200)
+		}
+		view.addPhoneTableFindModal(result, 'removePhoneUserFunction')
+		const list =  ajax.list();
+  		if(result !== null)
+ 			view.renderAllUserInTable(list, 'removeFunction', 'view', 'removePhoneUserFunction')
+			
+})
+
+
 
 
 
